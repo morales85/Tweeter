@@ -24,10 +24,10 @@
 
 
     let _postIdCounter = 2
-    console.log(_postIdCounter)
+    // console.log(_postIdCounter)
 
     let _commentIdCounter = 6
-    console.log(_commentIdCounter)
+    // console.log(_commentIdCounter)
     
     const getPosts = function(){
         return  _posts
@@ -61,7 +61,6 @@
         for (i = 0; i < _posts.length; i++)
         if ( _posts[i].id == postID){
             for (k = 0; k < _posts[i].comments.length; k++){
-            console.log(_posts[i].comments[k])
             if (_posts[i].comments[k].id == commentID){
     
                 _posts[i].comments.splice(k, 1)
@@ -81,57 +80,38 @@ return {
 
 }
 
-const tweeter = Tweeter()
+// const tweeter = Tweeter()
 
-tweeter.addPost("This is my own post!")
+// tweeter.addPost("This is my own post!")
+// // console.log(tweeter.getPosts())
+// //This should be added to the posts array:
+// //{text: "This is my own post!", id: "p3", comments: []}
+
+// tweeter.removePost("p1")
+// // console.log(tweeter.getPosts())
+// //There should only be two posts in the post's array:
+// //{text: "Aw man, I wanted to be first", id: "p2", comments: Array(3)}
+// //{text: "This is my own post!", id: "p3", comments: []}
+
+// //============================
+// //============================
+// //Stop here
+// //Make sure everything works. Then keep going
+// //============================
+// //============================
+
+// tweeter.addComment( "p3", "Damn straight it is!")
+// tweeter.addComment("p2" ,"Second the best!" )
 // console.log(tweeter.getPosts())
-//This should be added to the posts array:
-//{text: "This is my own post!", id: "p3", comments: []}
+// //This should be added to the third post's comments array:
+// //{id: "c7", text: "Damn straight it is!"}
 
-tweeter.removePost("p1")
-// console.log(tweeter.getPosts())
-//There should only be two posts in the post's array:
-//{text: "Aw man, I wanted to be first", id: "p2", comments: Array(3)}
-//{text: "This is my own post!", id: "p3", comments: []}
-
-//============================
-//============================
-//Stop here
-//Make sure everything works. Then keep going
-//============================
-//============================
-
-tweeter.addComment( "p3", "Damn straight it is!")
-tweeter.addComment("p2" ,"Second the best!" )
-console.log(tweeter.getPosts())
-//This should be added to the third post's comments array:
-//{id: "c7", text: "Damn straight it is!"}
-
-//This should be added to the second post's comments array:
-//{id: "c8", text: "Second the best!"}
-
-tweeter.removeComment("p2", "c6")
-console.log(tweeter.getPosts())
-//This comment should be removed:
-//{id: "c6", text: "Haha second place what a joke."}
-
+// //This should be added to the second post's comments array:
+// //{id: "c8", text: "Second the best!"}
 
 // tweeter.removeComment("p2", "c6")
 // console.log(tweeter.getPosts())
+// //This comment should be removed:
+// //{id: "c6", text: "Haha second place what a joke."}
 
-//     let removePost = function(postID) {
-//         /// find post by id  new function
-//         ///p = find post by id 
-//         ///p comments
-//         ///removecoments (postid, comment id)
 
-//         for( let i = 0; i < posts.length; i++){ 
-//             if ( arr[i] === 5) {
-//               arr.splice(i, 1); 
-//             }
-//          }
-
-//     }
-    
-//  }
- 
