@@ -48,7 +48,7 @@
     }
     }
 
-    let addComment = function(postID, text){
+    let addComment = function(text, postID){
         _commentIdCounter ++
         const ci = _commentIdCounter 
         for (i = 0; i < _posts.length; i++)

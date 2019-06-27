@@ -12,7 +12,7 @@ const Renderer = function () {
             comment +=  `<div class="comments"  data-id=${c.id}><span class="delete-comment">X</span>${c.text}</div> `
 
         }
-        post +=  `${comment}<input type="text"  placeholder="Got something to say?"><button >Comment</button><div><button class="delete">Delete Post</button></div></div>   `
+        post +=  `${comment}<input type="text"  placeholder="Got something to say?"><button>Comment</button><div><button class="delete">Delete Post</button></div></div>   `
 
         $("#posts").append(post)
         
