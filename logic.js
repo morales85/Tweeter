@@ -23,47 +23,44 @@
 
 
 
-    let _postIdCounter = 2
-    // console.log(_postIdCounter)
+    let _postIdCounter = 2  // Hard set counter id
 
-    let _commentIdCounter = 6
-    // console.log(_commentIdCounter)
+    let _commentIdCounter = 6   // Hard set counter id
     
-    const getPosts = function(){
+    const getPosts = function(){    // Funcion para return todos los post
         return  _posts
     
     } 
 
     let addPost = function(text) {
-        _postIdCounter ++
-        const id = _postIdCounter 
-        _posts.push({text: text, id: "p" + id , comments: [] })
+        _postIdCounter ++; const id = _postIdCounter // Añade 1 al postid counter
+        _posts.push({text: text, id: "p" + id , comments: [] }) // Añade un nuevo post a _posts con text,id y comentario
     }
 
     let removePost = function(postID){
-    for (let i in _posts){
-    if (_posts[i].id == postID){
-        _posts.splice(i, 1)
+    for (let i in _posts){  //Para cada post
+    if (_posts[i].id == postID){    //Comprobamos los post hasta que coincida con el postID que buscamos
+        _posts.splice(i, 1)         //Borramos el post encontrado(i), solo ese post(1)
         }
     }
     }
 
     let addComment = function(text, postID){
-        _commentIdCounter ++
+        _commentIdCounter ++        //Añade 1 al comment counter id
         const ci = _commentIdCounter 
-        for (i = 0; i < _posts.length; i++)
-        if (_posts[i].id  == postID ){
-            _posts[i].comments.push({id:"c" + ci, text: text,})
+        for (i = 0; i < _posts.length; i++) //Loop para mirar todos los comments
+        if (_posts[i].id  == postID ){      //Buscamos el post id que coincide con el post id que queremos
+            _posts[i].comments.push({id:"c" + ci, text: text,}) //Añadimos a _posts el post adecuando con id+1 y el texto
         }
     }
 
     let removeComment = function(postID, commentID){
-        for (i = 0; i < _posts.length; i++)
-        if ( _posts[i].id == postID){
-            for (k = 0; k < _posts[i].comments.length; k++){
-            if (_posts[i].comments[k].id == commentID){
+        for (i = 0; i < _posts.length; i++) //Loop para mirar todos los posts
+        if ( _posts[i].id == postID){       //Buscamos el post correcto con id igual al comentario que queremos borrar 
+            for (k = 0; k < _posts[i].comments.length; k++){    //Loop para mirar todos los comentarios
+            if (_posts[i].comments[k].id == commentID){         //Buscamos dentro del post correcto el comentario con el id que queremos borrar
     
-                _posts[i].comments.splice(k, 1)
+                _posts[i].comments.splice(k, 1)             //Borramos el comentario correcto
             } 
         }
     }}
@@ -79,39 +76,4 @@ return {
 
 
 }
-
-// const tweeter = Tweeter()
-
-// tweeter.addPost("This is my own post!")
-// // console.log(tweeter.getPosts())
-// //This should be added to the posts array:
-// //{text: "This is my own post!", id: "p3", comments: []}
-
-// tweeter.removePost("p1")
-// // console.log(tweeter.getPosts())
-// //There should only be two posts in the post's array:
-// //{text: "Aw man, I wanted to be first", id: "p2", comments: Array(3)}
-// //{text: "This is my own post!", id: "p3", comments: []}
-
-// //============================
-// //============================
-// //Stop here
-// //Make sure everything works. Then keep going
-// //============================
-// //============================
-
-// tweeter.addComment( "p3", "Damn straight it is!")
-// tweeter.addComment("p2" ,"Second the best!" )
-// console.log(tweeter.getPosts())
-// //This should be added to the third post's comments array:
-// //{id: "c7", text: "Damn straight it is!"}
-
-// //This should be added to the second post's comments array:
-// //{id: "c8", text: "Second the best!"}
-
-// tweeter.removeComment("p2", "c6")
-// console.log(tweeter.getPosts())
-// //This comment should be removed:
-// //{id: "c6", text: "Haha second place what a joke."}
-
 
